@@ -1,0 +1,25 @@
+version: '2'
+services:
+  database:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: f3nW8Caxy2pBt
+      MYSQL_DATABASE: exchangecalculator
+      MYSQL_USER: exchangeApp
+      MYSQL_PASSWORD: d8B1kZ4Us4a7C3
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+  web:
+    image: tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./exchangecalculator/target/exchangecalculator-1.0.war:/usr/local/tomcat/webapps/ROOT.war
+    depends_on:
+      - "database"
+    command: >
+      /bin/bash -c "sleep 30;
+      catalina.sh run"
+      # waiting for mysql database to initialize
