@@ -1,9 +1,9 @@
 # ExchangeCalculator
-<br />
+
 Api documentation.<br />
 
 Application runs on port 8080 and provides following services:<br />
-All services are available by GET HTTP request.<br /><br />
+All services are available by GET HTTP request.<br />
 
 GET /api/available_rates<br />
 Lists all available currencies beetween which exchange rates and amounts can be calculated.<br />
