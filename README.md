@@ -1,5 +1,7 @@
 # ExchangeCalculator
 
+To run application firstly build <a href="exchangecalculator/pom.xml">maven project</a> using command "mvn clean package" and then run docker containers with webapp and MySQL by using command "docker-compose up" in root directory.<br/>
+
 Api documentation.<br />
 
 Application runs on port 8080 and provides following services:<br />
